@@ -18,11 +18,8 @@ requirements:
     - python
 
 test:
-  requires:
-  - pip
-  - pytest
-  - python
-  - mock # [py2k]
+  imports:
+  - backports.shutil_which
 
 about:
   home: https://github.com/minrk/backports.shutil_which
