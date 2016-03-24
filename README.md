@@ -1,5 +1,8 @@
-# conda-nbdime
-A conda recipe for building [nbdime](https://github.com/martinal/nbdime) from
+# conda-backports.shutil_which
+A conda recipe for building [backports.shutil_which](https://github.com/minrk/backports.shutil_which) from
 github source
 
-nbdime provides tools for diffing and merging of Jupyter Notebooks.
+backports.shutil_which is a backport of shutil.which to Python 2.7 from Python
+3.3.
+
+backports.shutil_which is used by nbdime.
