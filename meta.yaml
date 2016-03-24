@@ -1,0 +1,30 @@
+package:
+  name: backports.shutil_which
+  version: {{ environ.get('GIT_DESCRIBE_TAG', '0.1.0') }}
+
+source:
+  git_rev: master
+  git_url: https://github.com/minrk/backports.shutil_which.git
+
+build:
+  number: {{ environ.get('GIT_DESCRIBE_NUMBER', 0) }}
+  {% if environ.get('GIT_DESCRIBE_NUMBER', '0') == '0' %}string: py{{ environ.get('PY_VER').replace('.', '') }}_0
+  {% else %}string: py{{ environ.get('PY_VER').replace('.', '') }}_{{ environ.get('GIT_BUILD_STR', 'GIT_STUB') }}{% endif %}
+
+requirements:
+  build:
+    - python
+  run:
+    - python
+
+test:
+  requires:
+  - pip
+  - pytest
+  - python
+  - mock # [py2k]
+
+about:
+  home: https://github.com/minrk/backports.shutil_which
+  license: MIT
+  summary: Backports Python 3 shutil.which
